@@ -41,6 +41,8 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+    - name: Setup Maven
+      run: apt update && apt install -y maven
     - name: Build with Maven
       env:
         DATABASE_URL_TEST: ${{ vars.REPO_DATABASE_URL }}
